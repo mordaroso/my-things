@@ -5,7 +5,7 @@
     %meta{'http-equiv' => 'content-language', :content => 'en'}
     %title todo
 
-    = stylesheet_link_tag 'reset', 'application', :cache => true
+    = stylesheet_link_tag 'reset', 'application', 'thing', :cache => true
   %body
 
     #head
@@ -18,13 +18,4 @@
         = content_tag :div, msg, :id => "flash_#{name}"
       = yield
 
-    #footer
-      .content
-        - if logged_in?
-          Welcome
-          = Configuration.get :name
-          |
-          = link_to 'logout', logout_url
-
-        - else
-          = link_to 'login', login_url
+    = render 'layouts/footer'

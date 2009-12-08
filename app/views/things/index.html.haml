@@ -1,0 +1,9 @@
+- if logged_in?
+  #control
+    = link_to 'add thing', new_thing_path
+
+= render @things
+
+%br.clear
+
+= will_paginate @things

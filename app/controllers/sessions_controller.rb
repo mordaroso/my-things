@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    puts Digest::SHA1.hexdigest(params[:password])
     if Digest::SHA1.hexdigest(params[:password]) == Configuration.get(:password)
       flash[:notice] = 'Logged in successfully.'
       session[:login] = true

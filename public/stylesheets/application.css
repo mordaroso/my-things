@@ -24,6 +24,14 @@ h2{
   font-size: 24px;
 }
 
+p{
+  margin: 3px 0 7px;
+}
+
+.clear{
+  clear: both;
+}
+
 #head{
   background-color: #ddd;
   border-bottom: 5px solid #333;
@@ -46,6 +54,16 @@ h2{
   margin-bottom: 40px;
 }
 
+#control{
+  float: right;
+  background-color: #eee;
+  border: 1px solid #aaa;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
 #footer{
   background:#DDDDDD none repeat scroll 0 0;
   border-top:2px solid #BBBBBB;
@@ -60,10 +78,12 @@ h2{
   background-color: #ffeeee;
   border: 1px solid #ffcccc;
   padding: 5px;
+  margin: 10px 0;
 }
 
 #flash_notice{
   background-color: #eeffee;
   border: 1px solid #ccffcc;
   padding: 5px;
+  margin: 10px 0;
 }

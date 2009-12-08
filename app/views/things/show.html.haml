@@ -1,0 +1,15 @@
+- if logged_in?
+  #control
+    = link_to 'Edit', edit_thing_path(@thing)
+    |
+    = link_to 'Destroy', @thing, :confirm => 'Are you sure?', :method => :delete
+
+%h2=h @thing.name
+
+- if @thing.image.exists?
+  %p= image_tag @thing.image.url(:medium)
+
+%p=h @thing.description
+
+%p
+  = link_to 'Back', things_path

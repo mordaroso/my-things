@@ -10,6 +10,9 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
 
   def logged_in_required
-    redirect_to root_url unless logged_in?
+    unless logged_in?
+      flash[:error] = 'Authentication required'
+      redirect_to root_url
+    end
   end
 end

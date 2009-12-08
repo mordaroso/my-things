@@ -13,3 +13,4 @@ coverage/*
 public/system/*
 Capfile
 config/deploy.rb
+lib/cap_recipies.rb

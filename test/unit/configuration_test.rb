@@ -3,7 +3,7 @@ require 'test_helper'
 class ConfigurationTest < ActiveSupport::TestCase
   test "get config" do
     assert_equal 'TestName', Configuration.get(:name)
-    assert_equal 'TestPassword', Configuration.get(:password)
+    assert_equal 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', Configuration.get(:password)
   end
 
   test "set single config" do

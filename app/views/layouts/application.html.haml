@@ -1,0 +1,30 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
+  %head
+    %meta{'http-equiv' => 'content-type', :content => 'text/html;charset=UTF-8'}
+    %meta{'http-equiv' => 'content-language', :content => 'en'}
+    %title todo
+
+    = stylesheet_link_tag 'reset', 'application', :cache => true
+  %body
+
+    #head
+      .content
+        %h1
+          = link_to "#{Configuration.get :name}'s things", root_url
+
+    #site.content
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}"
+      = yield
+
+    #footer
+      .content
+        - if logged_in?
+          Welcome
+          = Configuration.get :name
+          |
+          = link_to 'logout', logout_url
+
+        - else
+          = link_to 'login', login_url

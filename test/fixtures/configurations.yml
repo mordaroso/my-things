@@ -4,4 +4,4 @@ name:
 
 password:
   name: password
-  value: TestPassword
+  value: <%= Digest::SHA1.hexdigest('test') %>

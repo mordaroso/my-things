@@ -1,0 +1,5 @@
+%h3 Tags
+%ul#tags
+  - for tag in Tag.all
+    %li{:class => ('selected' if @tag == tag.name)}
+      = link_to tag.name, tag_path(tag.name)

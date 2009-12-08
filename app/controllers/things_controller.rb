@@ -4,7 +4,9 @@ class ThingsController < ApplicationController
   # GET /things
   # GET /things.xml
   def index
-    @things = Thing.all.paginate(:page => params[:page])
+    @tag = params[:tag]
+    @things = Thing.find_tagged_with(@tag, :on => :tags).paginate(:page => params[:page]) if @tag
+    @things ||= Thing.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

@@ -6,6 +6,21 @@ class ThingsControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:things)
+    assert_equal 3, assigns(:things).count
+  end
+
+  test "should get index with tag dvd" do
+    get :index, :tag => 'dvd'
+    assert_response :success
+    assert_not_nil assigns(:things)
+    assert_equal 1, assigns(:things).count
+  end
+
+  test "should get index with tag recommended" do
+    get :index, :tag => 'recommended'
+    assert_response :success
+    assert_not_nil assigns(:things)
+    assert_equal 2, assigns(:things).count
   end
 
   # new
@@ -42,19 +57,19 @@ class ThingsControllerTest < ActionController::TestCase
 
   # show
   test "should show thing" do
-    get :show, :id => things(:one).to_param
+    get :show, :id => things(:movie).to_param
     assert_response :success
   end
 
   # edit
   test "should get edit" do
     login
-    get :edit, :id => things(:one).to_param
+    get :edit, :id => things(:movie).to_param
     assert_response :success
   end
 
   test "should not get edit require logged in" do
-    get :edit, :id => things(:one).to_param
+    get :edit, :id => things(:movie).to_param
 
     assert_redirected_to root_url
     assert_equal 'Authentication required', flash[:error]
@@ -63,12 +78,12 @@ class ThingsControllerTest < ActionController::TestCase
   # update
   test "should update thing" do
     login
-    put :update, :id => things(:one).to_param, :thing => { }
+    put :update, :id => things(:movie).to_param, :thing => { }
     assert_redirected_to thing_path(assigns(:thing))
   end
 
   test "should not update thing require logged in" do
-    put :update, :id => things(:one).to_param, :thing => { }
+    put :update, :id => things(:movie).to_param, :thing => { }
     assert_redirected_to root_url
     assert_equal 'Authentication required', flash[:error]
   end
@@ -77,7 +92,7 @@ class ThingsControllerTest < ActionController::TestCase
   test "should destroy thing" do
     login
     assert_difference('Thing.count', -1) do
-      delete :destroy, :id => things(:one).to_param
+      delete :destroy, :id => things(:movie).to_param
     end
 
     assert_redirected_to things_path
@@ -85,7 +100,7 @@ class ThingsControllerTest < ActionController::TestCase
 
   test "should not destroy thing require logged in" do
     assert_no_difference('Thing.count') do
-      delete :destroy, :id => things(:one).to_param
+      delete :destroy, :id => things(:movie).to_param
     end
 
     assert_redirected_to root_url

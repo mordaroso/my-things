@@ -1,6 +1,9 @@
-- if logged_in?
-  #control
-    = link_to 'add thing', new_thing_path
+- content_for :right do
+  = render 'welcome'
+  = render 'tags'
+
+- content_for :admin do
+  %li= link_to 'add thing', new_thing_path
 
 = render @things
 

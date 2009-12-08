@@ -1,0 +1,14 @@
+movie_dvd:
+  tag: dvd
+  taggable: movie (Thing)
+  context: tags
+
+movie_recommended:
+  tag: recommended
+  taggable: movie (Thing)
+  context: tags
+
+book_recommended:
+  tag: recommended
+  taggable: book (Thing)
+  context: tags

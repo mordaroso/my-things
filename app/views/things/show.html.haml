@@ -1,8 +1,6 @@
-- if logged_in?
-  #control
-    = link_to 'Edit', edit_thing_path(@thing)
-    |
-    = link_to 'Destroy', @thing, :confirm => 'Are you sure?', :method => :delete
+- content_for :admin do
+  %li= link_to 'Edit thing', edit_thing_path(@thing)
+  %li= link_to 'Destroy thing', @thing, :confirm => 'Are you sure?', :method => :delete
 
 %h2=h @thing.name
 
@@ -10,6 +8,12 @@
   %p= image_tag @thing.image.url(:medium)
 
 %p=h @thing.description
+
+- if @thing.tags.any?
+  %p
+    Tags:
+    - for tag in @thing.tags
+      = link_to tag.name, tag_path(tag.name)
 
 %p
   = link_to 'Back', things_path

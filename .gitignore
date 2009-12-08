@@ -11,3 +11,5 @@ db/development_structure.sql
 coverage*
 coverage/*
 public/system/*
+Capfile
+config/deploy.rb

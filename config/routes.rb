@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :things
+  map.tag 'tag/:tag', :controller => 'things', :action => 'index'
 
   map.resources :sessions
 

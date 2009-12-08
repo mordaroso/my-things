@@ -6,22 +6,34 @@ body{
 }
 
 a{
-  color: #5555dd;
+  color: #3471bc;
+  text-shadow: 1px 1px #eee;
 }
 
 a:hover{
-  color: #3333dd;
+  color: #5482bc;
+}
+
+h1, h2, h3{
+  font-family: Georgia, serif;
+  font-weight: bold;
+  color: #4b9423;
+  text-shadow:1px 1px #CCCCCC;
 }
 
 h1{
   line-height: 40px;
   font-size: 30px;
-  font-weight: bold;
 }
 
 h2{
   margin: 10px 0 5px;
   font-size: 24px;
+}
+
+h3{
+  margin: 10px 0 0;
+  font-size: 16px;
 }
 
 p{
@@ -32,45 +44,59 @@ p{
   clear: both;
 }
 
+#left{
+  float: left;
+  width: 800px;
+}
+
+#right{
+  float: right;
+  width: 139px;
+  padding: 0 0 0 20px;
+  border-left: 1px solid #aaa;
+}
+
+#right ul{
+  list-style: none;
+}
+
 #head{
-  background-color: #ddd;
+  background-color: #acacac;
   border-bottom: 5px solid #333;
   padding: 10px 0;
   margin-bottom: 20px;
 }
 
 #head a{
-  color: #fff;
-  text-shadow: 2px 2px 5px #000;
-  text-decoration: none;
+  color:#fff;
+  font-size:40px;
+  font-style:italic;
+  text-decoration:none;
+  text-shadow: none;
 }
 
 .content{
   margin: 0 auto;
-  width: 800px;
+  width: 960px;
+}
+
+.pagination{
+  margin: 10px 0;
+  color: #333;
+}
+
+.pagination span, .pagination a{
+  border: 1px solid #aaa;
+  background-color: #eee;
+  padding: 2px;
+}
+
+.pagination .current{
+  background-color: #ccc;
 }
 
 #site{
-  margin-bottom: 40px;
-}
-
-#control{
-  float: right;
-  background-color: #eee;
-  border: 1px solid #aaa;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-#footer{
-  background:#DDDDDD none repeat scroll 0 0;
-  border-top:2px solid #BBBBBB;
-  bottom:0;
-  position:fixed;
-  width:100%;
-  padding:2px 0;
+  margin-bottom: 10px;
 }
 
 /*Flash*/

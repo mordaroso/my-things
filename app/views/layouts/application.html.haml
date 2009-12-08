@@ -3,9 +3,9 @@
   %head
     %meta{'http-equiv' => 'content-type', :content => 'text/html;charset=UTF-8'}
     %meta{'http-equiv' => 'content-language', :content => 'en'}
-    %title todo
+    %title= html_title
 
-    = stylesheet_link_tag 'reset', 'application', 'thing', :cache => true
+    = stylesheet_link_tag 'reset', 'application', 'thing', 'tags', :cache => true
   %body
 
     #head
@@ -16,6 +16,23 @@
     #site.content
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
-      = yield
+      #left
+        = yield
 
-    = render 'layouts/footer'
+      #right
+        = yield(:right)
+        - if logged_in?
+          %h3 Administration
+          %ul
+            = yield(:admin)
+            = link_to 'logout', logout_url
+
+        %h3 About
+        %p
+          This
+          =link_to 'Ruby on Rails', 'http://rubyonrails.org'
+          Application is
+          =link_to 'open source', 'http://github.com/mordaroso/my-things'
+          and created by
+          = link_to 'Fabio Kuhn', 'http://fabiokuhn.com'
+      %br.clear

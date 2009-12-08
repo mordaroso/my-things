@@ -1,9 +1,11 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+movie:
+  name: movie
+  description: a beautiful movie
 
-one:
-  name: MyString
-  description: MyText
+socks:
+  name: socks
+  description: two smelly socks
 
-two:
-  name: MyString
-  description: MyText
+book:
+  name: book
+  description: an intersting book

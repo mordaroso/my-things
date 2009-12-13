@@ -1,4 +1,7 @@
 class Thing < ActiveRecord::Base
+  has_many :loans
+  has_many :persons, :through => :loans
+
   acts_as_taggable_on :tags
 
   validates_presence_of :name

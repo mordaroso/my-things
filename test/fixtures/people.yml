@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+sandra:
+  name: Sandra
+  email: sandra@test.com
+  address: Vogesenstr. 146
+  city: Basel
+  zip_code: 4056
+  phone: 061 312 12 12
+
+pascal:
+  name: Pascal
+  email: pascal@test.com
+  address: Thiersteinerallee 12
+  city: Basel
+  zip_code: 4052
+  phone: 061 321 21 21

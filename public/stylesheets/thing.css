@@ -31,9 +31,8 @@
 }
 
 .thing:hover{
-  -moz-box-shadow: 2px 10px 15px #333;
-  -webkit-box-shadow: 2px 10px 15px #333;
-  box-shadow: 2px 10px 15px #333;
+  -moz-box-shadow: 2px 5px 20px #333;
+  -webkit-box-shadow: 2px 5px 20px #333;
+  box-shadow: 2px 5px 20px #333;
   color: #000;
-  margin: 5px 15px 15px;
 }

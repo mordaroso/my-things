@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+sandra_movie:
+  thing: movie
+  person: sandra
+  from: 2009-12-10 11:26:17
+  to: 2009-12-11 11:26:17
+
+pascal_book:
+  thing: book
+  person: pascal
+  from: 2009-12-10 11:26:17
+  to:

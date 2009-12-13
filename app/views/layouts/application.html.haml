@@ -25,7 +25,8 @@
           %h3 Administration
           %ul
             = yield(:admin)
-            = link_to 'logout', logout_url
+            %li= link_to 'people', people_url
+            %li= link_to 'logout', logout_url
 
         %h3 About
         %p

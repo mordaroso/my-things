@@ -1,6 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :people
+
   map.resources :things
   map.tag 'tag/:tag', :controller => 'things', :action => 'index'
+  
+  map.resources :loans
 
   map.resources :sessions
 

@@ -1,0 +1,28 @@
+%p
+  %strong Name:
+  =h @person.name
+
+%p
+  %strong Email:
+  =h @person.email
+
+%p
+  %strong Address:
+  =h @person.address
+
+%p
+  %strong City:
+  =h @person.city
+
+%p
+  %strong Zip Code:
+  =h @person.zip_code
+
+%p
+  %strong Phone:
+  =h @person.phone
+
+
+= link_to 'Edit', edit_person_path(@person)
+|
+= link_to 'Back', people_path

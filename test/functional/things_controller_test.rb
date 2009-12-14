@@ -22,6 +22,20 @@ class ThingsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:things)
     assert_equal 2, assigns(:things).count
   end
+  
+  test "should get index with lender sandra" do
+    get :index, :person_id => people(:sandra)
+    assert_response :success
+    assert_not_nil assigns(:things)
+    assert_equal 0, assigns(:things).count
+  end
+  
+  test "should get index with lender pascal" do
+    get :index, :person_id => people(:pascal)
+    assert_response :success
+    assert_not_nil assigns(:things)
+    assert_equal 1, assigns(:things).count
+  end
 
   # new
   test "should get new" do

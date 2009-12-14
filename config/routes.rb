@@ -1,11 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :people
-
   map.resources :things
   map.tag 'tag/:tag', :controller => 'things', :action => 'index'
+  map.connect 'people/:person_id', :controller => 'things', :action => 'index'
   
   map.resources :loans
-
+  map.resources :people
   map.resources :sessions
 
   map.login 'login', :controller => 'sessions', :action => 'new'

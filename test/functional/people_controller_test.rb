@@ -20,13 +20,7 @@ class PeopleControllerTest < ActionController::TestCase
       post :create, :person => {:name => 'hans', :email => 'hans@franz.com' }
     end
 
-    assert_redirected_to person_path(assigns(:person))
-  end
-
-  test "should show person" do
-    login
-    get :show, :id => people(:sandra).to_param
-    assert_response :success
+    assert_redirected_to people_path
   end
 
   test "should get edit" do
@@ -38,7 +32,7 @@ class PeopleControllerTest < ActionController::TestCase
   test "should update person" do
     login
     put :update, :id => people(:sandra).to_param, :person => { }
-    assert_redirected_to person_path(assigns(:person))
+    assert_redirected_to people_path
   end
 
   test "should destroy person" do

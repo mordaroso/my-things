@@ -1,0 +1,13 @@
+#loans{
+	width:100%;
+	margin: 10px 0;
+}
+
+#loans th {
+	border-bottom: 1px solid #ccc;
+	margin-right: 2px;
+}
+
+#loans td{
+	padding: 5px 0;
+}

@@ -1,25 +1,30 @@
 %h1 Listing people
 
-%table
-  %tr
-    %th Name
-    %th Email
-    %th Address
-    %th City
-    %th Zip Code
-    %th Phone
+%table{:style=>'width:100%'}
+  %thead
+    %tr
+      %th Name
+      %th Email
+      %th Address
+      %th City
+      %th Zip Code
+      %th Phone
+      %th
+      %th
+      %th
 
-- @people.each do |person|
-  %tr
-    %td=h person.name
-    %td=h person.email
-    %td=h person.address
-    %td=h person.city
-    %td=h person.zip_code
-    %td=h person.phone
-    %td= link_to 'Show', person
-    %td= link_to 'Edit', edit_person_path(person)
-    %td= link_to 'Destroy', person, :confirm => 'Are you sure?', :method => :delete
+  - @people.each do |person|
+    %tbody
+      %tr
+        %td=h person.name
+        %td=h person.email
+        %td=h person.address
+        %td=h person.city
+        %td=h person.zip_code
+        %td=h person.phone
+        %td= link_to lender_link(person, 'Show'), person
+        %td= link_to 'Edit', edit_person_path(person)
+        %td= link_to 'Destroy', person, :confirm => 'Are you sure?', :method => :delete
 
 %br
 

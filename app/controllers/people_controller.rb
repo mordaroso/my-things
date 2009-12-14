@@ -12,17 +12,6 @@ class PeopleController < ApplicationController
     end
   end
 
-  # GET /people/1
-  # GET /people/1.xml
-  def show
-    @person = Person.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @person }
-    end
-  end
-
   # GET /people/new
   # GET /people/new.xml
   def new
@@ -47,7 +36,7 @@ class PeopleController < ApplicationController
     respond_to do |format|
       if @person.save
         flash[:notice] = 'Person was successfully created.'
-        format.html { redirect_to(@person) }
+        format.html { redirect_to(people_url) }
         format.xml  { render :xml => @person, :status => :created, :location => @person }
       else
         format.html { render :action => "new" }
@@ -64,7 +53,7 @@ class PeopleController < ApplicationController
     respond_to do |format|
       if @person.update_attributes(params[:person])
         flash[:notice] = 'Person was successfully updated.'
-        format.html { redirect_to(@person) }
+        format.html { redirect_to(people_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

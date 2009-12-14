@@ -14,6 +14,11 @@
     Tags:
     - for tag in @thing.tags
       = link_to tag.name, tag_path(tag.name)
+      
+    
+- if logged_in?
+  %h3 Loans:
+  = render :partial => 'loans/loans', :object => @thing.loans
 
 %p
   = link_to 'Back', things_path

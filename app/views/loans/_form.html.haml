@@ -1,0 +1,9 @@
+%tr{:class => loan_class(loan_form.object)}
+  %td
+    = loan_form.hidden_field :id
+    = loan_form.date_select :from
+  %td= loan_form.date_select :to, :include_blank => true, :default => nil
+  %td= loan_form.select :person_id, Person.all.collect {|p| [p.name, p.id]}
+  %td 
+    = link_to_function 'delete', :class => 'delete_loan'
+    = loan_form.hidden_field '_delete' unless loan_form.object.new_record?

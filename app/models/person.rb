@@ -11,6 +11,8 @@ class Person < ActiveRecord::Base
   validates_format_of :email, :with => EMAIL_REGEX, :allow_blank => true
   validates_presence_of :name
   validates_uniqueness_of :email, :name
+  
+  named_scope :lenders, :joins => [:loans], :conditions => {:loans => {:to => nil}}
 
   attr_accessible :name, :email, :phone, :address, :city, :zip_code
 end

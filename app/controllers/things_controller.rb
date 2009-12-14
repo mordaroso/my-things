@@ -5,7 +5,9 @@ class ThingsController < ApplicationController
   # GET /things.xml
   def index
     @tag = params[:tag]
+    @lender = Person.find(params[:person_id]) if params[:person_id]
     @things = Thing.find_tagged_with(@tag, :on => :tags).paginate(:page => params[:page]) if @tag
+    @things ||= @lender.borrowed_things.paginate(:page => params[:page]) if @lender
     @things ||= Thing.paginate(:page => params[:page])
 
     respond_to do |format|

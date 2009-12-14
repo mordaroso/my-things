@@ -1,4 +1,5 @@
 - form_for(@thing, :html => { :multipart => true }) do |f|
+  = javascript_var :loan => generate_nested_form_html(f, :loans, :partial => 'loans/form', :form_builder_local => :loan_form)
   = f.error_messages
 
   %p
@@ -20,6 +21,21 @@
     = f.label :tag_list
     %br
     = f.text_field :tag_list
+    
+  %h3 Loans  
+  %table#loans
+    %thead
+      %tr
+        %th{:style=>'width:30%'} From
+        %th{:style=>'width:30%'} To
+        %th{:style=>'width:30%'} Person
+        %th
+    %tbody
+      - f.fields_for :loans do |loan_form|
+        = render :partial => 'loans/form', :locals => {:loan_form => loan_form}
+      %tr
+        %td{:colspan => 5}
+          = link_to_function 'Add Loan', :class => 'add_loan'
 
   %p
     = f.submit 'Save'

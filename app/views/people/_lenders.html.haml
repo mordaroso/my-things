@@ -1,0 +1,6 @@
+-if Person.lenders.any?
+  %h3 Lenders
+  %ul#lenders
+    - for lender in Person.lenders
+      %li{:class => selected(@lender == lender)}
+        = link_to lender_link(lender), person_url(lender)
